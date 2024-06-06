@@ -1,15 +1,17 @@
-import * as React from "react"
-import Header from "./Header"
-import Footer from "./Footer"
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import ContactModal from './ContactModal';
 
 const Layout = ({ children }) => {
     return (
-        <div>
+        <>
             <Header />
             <main>{children}</main>
             <Footer />
-        </div>
-    )
-}
+            <ContactModal />
+        </>
+    );
+};
 
-export default Layout
+export default Layout;
