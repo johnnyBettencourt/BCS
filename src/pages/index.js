@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import aboutUsImg from "../../static/images/about-us.jpg";
 import servicesImg from "../../static/images/services.jpg";
-import portfolio1Img from "../../static/images/portfolio1.jpg";
-import portfolio2Img from "../../static/images/portfolio2.jpg";
-import portfolio3Img from "../../static/images/portfolio3.jpg";
+import portfolio1Img from "../../static/images/portfolio1.1.jpg";
+import portfolio2Img1 from "../../static/images/portfolio2.1.jpg";
+import portfolio2Img2 from "../../static/images/portfolio2.2.jpg";
+import portfolio3Img1 from "../../static/images/portfolio3.1.jpg";
+import portfolio3Img2 from "../../static/images/portfolio3.2.jpg";
 import testimonial1Img from "../../static/images/testimonial1.jpg";
 import heroBannerImg from "../../static/images/hero-banner.jpg";
 
@@ -73,8 +77,22 @@ const IndexPage = () => {
           <h2 className="text-4xl font-bold mb-4">Portfolio</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <img src={portfolio1Img} alt="Project 1" className="rounded-lg shadow-lg" />
-            <img src={portfolio2Img} alt="Project 2" className="rounded-lg shadow-lg" />
-            <img src={portfolio3Img} alt="Project 3" className="rounded-lg shadow-lg" />
+            <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} useKeyboardArrows={true} autoPlay={true}>
+              <div>
+                <img src={portfolio2Img1} alt="Project 2 - Downtown" className="rounded-lg shadow-lg" />
+              </div>
+              <div>
+                <img src={portfolio2Img2} alt="Project 2 - Mesa" className="rounded-lg shadow-lg" />
+              </div>
+            </Carousel>
+            <Carousel showArrows={true} showThumbs={false} infiniteLoop={true} useKeyboardArrows={true} autoPlay={true}>
+              <div>
+                <img src={portfolio3Img1} alt="Project 3 - 1" className="rounded-lg shadow-lg" />
+              </div>
+              <div>
+                <img src={portfolio3Img2} alt="Project 3 - 2" className="rounded-lg shadow-lg" />
+              </div>
+            </Carousel>
           </div>
           <p className="text-xl mb-8 mt-8">
             Take a look at some of our past projects and see how we've helped churches enhance their worship environments.
