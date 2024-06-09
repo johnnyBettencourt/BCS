@@ -1,6 +1,12 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import { Helmet } from 'react-helmet';
+import scenicDesign from "../../Static/images/scenic-design.jpg";
+import lightingDesign from "../../Static/images/lighting-design.jpg";
+import videoSystems from "../../Static/images/video-systems.jpg";
+import audioIntegration from "../../Static/images/audio-integration.jpg";
+import volunteers from "../../Static/images/volunteers.jpg";
+import teamTraining from "../../Static/images/team-training.jpg";
 
 const ServicesPage = () => {
     return (
@@ -76,7 +82,7 @@ const ServicesPage = () => {
                     </div>
                     <div className="flex flex-col md:flex-row items-center">
                         <div className="w-full md:w-1/2 md:order-2">
-                            <img src="https://placehold.co/600x400" alt="Team Training" className="rounded-lg shadow-lg" />
+                            <img src={teamTraining} alt="Team Training" className="rounded-lg shadow-lg" />
                         </div>
                         <div className="w-full md:w-1/2 md:pr-8 mt-8 md:mt-0 md:order-1">
                             <h2 className="text-4xl font-bold mb-4">Team Training</h2>
