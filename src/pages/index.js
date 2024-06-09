@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
+import aboutUsImg from "../../static/images/about-us.jpg";
+import servicesImg from "../../static/images/services.jpg";
+import portfolio1Img from "../../static/images/portfolio1.jpg";
+import portfolio2Img from "../../static/images/portfolio2.jpg";
+import portfolio3Img from "../../static/images/portfolio3.jpg";
+import testimonial1Img from "../../static/images/testimonial1.jpg";
+import heroBannerImg from "../../static/images/hero-banner.jpg";
 
 const IndexPage = () => {
   const [showModal, setShowModal] = useState(false);
@@ -12,19 +19,23 @@ const IndexPage = () => {
         <title>Bettencourt Creative Solutions</title>
         <meta name="description" content="Helping churches communicate the gospel through modern tech." />
       </Helmet>
-      <section className="text-center py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4">Welcome to Bettencourt Creative Solutions</h1>
-          <p className="text-xl mb-8">
-            We help churches communicate the timeless message of the gospel through modern technical solutions.
-          </p>
-          <a href="/services" className="bg-blue-500 text-white py-2 px-4 rounded-full">Our Services</a>
+      <section className="relative text-center">
+        <div className="relative w-full h-64 md:h-96 overflow-hidden">
+          <img src={heroBannerImg} alt="Hero Banner" className="w-full h-full object-cover absolute inset-0 z-0" />
+          <div className="absolute inset-0 bg-black opacity-50 z-10"></div>
+          <div className="relative z-20 container mx-auto px-4 py-20">
+            <h1 className="text-5xl font-bold mb-4 text-white">Welcome to Bettencourt Creative Solutions</h1>
+            <p className="text-xl mb-8 text-white">
+              We help churches communicate the timeless message of the gospel through modern technical solutions.
+            </p>
+            <a href="/services" className="bg-blue-500 text-white py-2 px-4 rounded-full">Our Services</a>
+          </div>
         </div>
       </section>
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
           <div className="w-full md:w-1/2">
-            <img src="https://placehold.co/600x400" alt="About Us" className="rounded-lg shadow-lg" />
+            <img src={aboutUsImg} alt="About Us" className="rounded-lg shadow-lg" />
           </div>
           <div className="w-full md:w-1/2 md:pl-8 mt-8 md:mt-0">
             <h2 className="text-4xl font-bold mb-4">About Us</h2>
@@ -36,29 +47,34 @@ const IndexPage = () => {
         </div>
       </section>
       <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-4">Our Services</h2>
-          <p className="text-xl mb-8">
-            We offer a range of services to help churches communicate the gospel:
-          </p>
-          <ul className="list-disc list-inside mb-8">
-            <li className="mb-4">Scenic Design Consulting</li>
-            <li className="mb-4">Lighting Design</li>
-            <li className="mb-4">Video Systems Integration (both broadcast and in-room)</li>
-            <li className="mb-4">Audio Integration</li>
-            <li className="mb-4">Volunteer-Friendly Systems</li>
-            <li className="mb-4">Team Training</li>
-          </ul>
-          <Link to="/services" className="bg-blue-500 text-white py-2 px-4 rounded-full">Discover More</Link>
+        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center">
+          <div className="w-full md:w-1/2 md:pl-8 mt-8 md:mt-0 order-last md:order-first">
+            <h2 className="text-4xl font-bold mb-4">Our Services</h2>
+            <p className="text-xl mb-8">
+              We offer a range of services to help churches communicate the gospel:
+            </p>
+            <ul className="list-disc list-inside mb-8">
+              <li className="mb-4">Scenic Design Consulting</li>
+              <li className="mb-4">Lighting Design</li>
+              <li className="mb-4">Video Systems Integration (both broadcast and in-room)</li>
+              <li className="mb-4">Audio Integration</li>
+              <li className="mb-4">Volunteer-Friendly Systems</li>
+              <li className="mb-4">Team Training</li>
+            </ul>
+            <Link to="/services" className="bg-blue-500 text-white py-2 px-4 rounded-full">Discover More</Link>
+          </div>
+          <div className="w-full md:w-1/2">
+            <img src={servicesImg} alt="Our Services" className="rounded-lg shadow-lg" />
+          </div>
         </div>
       </section>
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold mb-4">Portfolio</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <img src="https://placehold.co/300x200" alt="Project 1" className="rounded-lg shadow-lg" />
-            <img src="https://placehold.co/300x200" alt="Project 2" className="rounded-lg shadow-lg" />
-            <img src="https://placehold.co/300x200" alt="Project 3" className="rounded-lg shadow-lg" />
+            <img src={portfolio1Img} alt="Project 1" className="rounded-lg shadow-lg" />
+            <img src={portfolio2Img} alt="Project 2" className="rounded-lg shadow-lg" />
+            <img src={portfolio3Img} alt="Project 3" className="rounded-lg shadow-lg" />
           </div>
           <p className="text-xl mb-8 mt-8">
             Take a look at some of our past projects and see how we've helped churches enhance their worship environments.
@@ -71,17 +87,13 @@ const IndexPage = () => {
           <h2 className="text-4xl font-bold mb-4">Testimonials</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-xl mb-4">"Bettencourt Creative Solutions transformed our worship experience. Highly recommended!"</p>
-              <p className="text-gray-700">- Client Name</p>
+              <div className="flex items-center mb-4">
+                <img src={testimonial1Img} alt="Testimonial 1" className="w-16 h-16 rounded-full shadow-lg mr-4" />
+                <p className="text-xl font-semibold">Client Name</p>
+              </div>
+              <p className="text-lg">"Bettencourt Creative Solutions transformed our worship experience. Highly recommended!"</p>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-xl mb-4">"Professional and innovative solutions. Our church is so grateful for their expertise."</p>
-              <p className="text-gray-700">- Client Name</p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <p className="text-xl mb-4">"Exceptional service and great results. We couldn't be happier!"</p>
-              <p className="text-gray-700">- Client Name</p>
-            </div>
+            {/* Add more testimonials here */}
           </div>
         </div>
       </section>
